@@ -36,8 +36,20 @@ class Animal(Basemodel):
     animal_gender=models.CharField(max_length=100, choices=GENDER_CHOICES)
     animal_breed=models.ManyToManyField(AnimalBreed)
     animal_colour=models.ManyToManyField(AnimalColor)
+    
+    
+        
     class Meta:
         ordering =['animal_name']
+    def incrementViews(self):
+        self.animal_views += 1
+        self.save()
+    
+    def incrementsLike(self):
+        self.animal_likes +=1
+        self.save()
+    
+    
     def __str__(self) ->str:
         return self.animal_name
 
