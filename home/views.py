@@ -40,11 +40,14 @@ class AnimalDetailView(APIView):
             queryset.incrementViews()
             serializer=AnimalSerializer(queryset)
             
+            
+            
             return Response({
                'status' : True,
                'message' : 'animal fetched with GET',
                'data' : serializer.data
             })
+            
         except Exception as e:
             print(e)
             

@@ -34,10 +34,12 @@ class AnimalSerializer(serializers.ModelSerializer):
     class Meta:
         model=Animal
         exclude=['updated_at']
+        
 class AnimalLocationSerializer(serializers.ModelSerializer):
     class Meta:
         model=AnimalLocation
         fields='__all__'
+        
 class AnimalImagesSerializer(serializers.ModelSerializer):
     class Meta:
         model=AnimalImages
